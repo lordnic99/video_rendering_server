@@ -189,9 +189,12 @@ def join_all_audio(audio_list, output_file):
     
     mp3_list_ = mp3_list
     
+    mp3_list[:] = [(lambda string: string.replace("'", r"'\''"))(path) for path in mp3_list]
+
     mp3_list = [r"file '" + file + r"'" for file in mp3_list]
     
     audio_list_txt = os.path.normpath(os.path.join(os.path.dirname(__file__), r'..\RenderService')) + "\\" + "audio_list.txt"
+    
     
     with open(audio_list_txt, "w", encoding='utf-8') as f:
         for mp3 in mp3_list:
