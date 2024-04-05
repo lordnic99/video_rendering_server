@@ -1,1 +1,4 @@
 env/*
+Job_Result/*
+RenderService/input/*
+RenderService/output/*
