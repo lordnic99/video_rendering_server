@@ -1,0 +1,2 @@
+02/12/2020: init, basic convert, suport 1 mp4 1 mp3
+03/12/2020: suport multi mp4 1 mp3, remove temp file in input, improve performance by convert mp4->ts before merge

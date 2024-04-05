@@ -1,0 +1,22 @@
+2024-03-31 17:08:47,350 - root - INFO - Master.py: MASTER Server khởi tạo thành công!
+2024-03-31 17:08:47,351 - root - INFO - Master.py: Đang đợi nhận job.....
+2024-03-31 17:08:47,354 - root - INFO - Master.py: Đã nhận được job mới: Private 17 - James Patterson, Adam Hamdy - Private 17 - Private Beijing
+2024-03-31 17:08:47,356 - root - INFO - Master.py: Tiến hành chuẩn bị cho job mới
+2024-03-31 17:08:47,405 - root - INFO - Master.py: Tìm thấy JPG: Private Beijing.jpg
+2024-03-31 17:08:47,408 - root - INFO - Common.py: File 'Private Beijing.jpg' đã được đưa vào input.
+2024-03-31 17:08:47,410 - root - INFO - Master.py: Chỉ có một audio được tìm thấy: Private Beijing.mp3
+2024-03-31 17:08:48,351 - root - INFO - Common.py: File 'Private Beijing.mp3' đã được đưa vào input.
+2024-03-31 17:08:48,352 - root - INFO - Master.py: Công việc đã chuẩn bị xong, đang gọi Render Service!
+2024-03-31 17:09:10,626 - root - INFO - Master.py: Render Service đã chạy xong!
+2024-03-31 17:09:10,629 - root - INFO - Master.py: Job đã hoàn thành: Private 17 - James Patterson, Adam Hamdy - Private 17 - Private Beijing
+2024-03-31 17:09:27,347 - pika.adapters.blocking_connection - INFO - Closing connection (200): Normal shutdown
+2024-03-31 17:09:27,347 - pika.channel - INFO - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000269FDC54EB0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2024-03-31 17:09:27,348 - pika.channel - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000269FDC54EB0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2024-03-31 17:09:27,349 - pika.connection - INFO - Closing connection (200): 'Normal shutdown'
+2024-03-31 17:09:27,351 - pika.adapters.utils.io_services_utils - INFO - Aborting transport connection: state=1; <socket.socket fd=512, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 50899, 0, 0), raddr=('::1', 5672, 0, 0)>
+2024-03-31 17:09:27,351 - pika.adapters.utils.io_services_utils - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=512, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 50899, 0, 0), raddr=('::1', 5672, 0, 0)>
+2024-03-31 17:09:27,352 - pika.adapters.utils.io_services_utils - INFO - Deactivating transport: state=1; <socket.socket fd=512, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 50899, 0, 0), raddr=('::1', 5672, 0, 0)>
+2024-03-31 17:09:27,353 - pika.connection - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2024-03-31 17:09:27,353 - pika.connection - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2024-03-31 17:09:27,354 - pika.adapters.utils.io_services_utils - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=512, family=AddressFamily.AF_INET6, type=SocketKind.SOCK_STREAM, proto=6, laddr=('::1', 50899, 0, 0), raddr=('::1', 5672, 0, 0)>
+2024-03-31 17:09:27,354 - pika.adapters.blocking_connection - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
