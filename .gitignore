@@ -2,6 +2,6 @@ env/*
 Job_Result/*
 RenderService/input/*
 RenderService/output/*
-MASTER__pycache__
+MASTER/__pycache__
 RenderService/audio_list.txt
 RenderService/video_list.txt
