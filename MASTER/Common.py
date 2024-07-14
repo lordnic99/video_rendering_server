@@ -303,4 +303,7 @@ def join_all_audio(audio_list, output_file):
 
 
 def get_job_result():
-    return os.listdir("../Job_Result")
+    if os.path.exists("../Job_Result"):
+        return os.listdir("../Job_Result")
+
+    return []

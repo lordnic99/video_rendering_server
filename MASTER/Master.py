@@ -4,8 +4,9 @@ import threading
 import os
 import functools
 import subprocess
-import GUI_Service
 import sys
+import bing.crawler as crawler
+import bing.helperdownload as helperdownload
 
 if len(sys.argv) == 1:
     Common.WORKING_MODE = "AUTO"
@@ -58,13 +59,28 @@ def do_work(connection, channel, delivery_tag, body):
         jpg.join()
     else:
         Common.log_message(f"Job {job_name}, không tìm thấy JPG!", level="ERROR")
-        Common.log_message(f"Bỏ qua job: {job_name}.")
-        Common.save_job_to_file(message)
-        # GUI_Service.jpg_not_existed(job_name)
-        # os._exit(1)
-        cb = functools.partial(ack_message, channel, delivery_tag)
-        connection.add_callback_threadsafe(cb)
-        return
+        Common.log_message(f"Tiến hành tiềm kiếm ảnh cho job: {job_name}.")
+        crawled_urls = crawler.crawl_image_urls(
+            keywords=f"{job_name} audiobook",
+            engine="Bing",
+            max_number=10,
+            face_only=False,
+            safe_mode=False,
+            proxy_type=None,
+            proxy=None,
+            browser="firefox_headless",
+            image_type=None,
+            color=None,
+        )
+
+        helperdownload.download_images(
+            image_urls=crawled_urls,
+            dst_dir=os.path.join(
+                os.path.dirname(__file__), r"..\RenderService\input\video"
+            ),
+            file_prefix="input",
+        )
+
     if len(audio_path) == 1:
         Common.log_message(
             f"Chỉ có một audio được tìm thấy: {str(audio_path[0]).rsplit(os.sep, 1)[-1]}"
